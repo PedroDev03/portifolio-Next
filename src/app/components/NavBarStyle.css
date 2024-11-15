@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.Navbar{
+
+    background-color: #295b8a;
+    display: flex;
+    padding: 20px 40px 30px 25px;
+    
+}
+
+
+/* Estilo do contêiner do dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+  }
+  
+/* Estilo do botão */
+.Botao-Projetos {
+    padding: 10px 40px 10px 40px;
+    cursor: pointer;
+    background-color: #4376a7;
+    color:white;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-left: 380px;
+
+}
+.Botao-Contato {
+    padding: 10px 40px 10px 40px;
+    cursor: pointer;
+    background-color: #4376a7;
+    color:white;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-left: 80px;
+
+}
+/* Menu dropdown */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 73%; /* Alinha o menu com o botão */
+    background-color:white;
+    box-shadow: 10px 14px 18px rgba(196, 196, 196, 0.1);
+    color:black;
+    border-radius: 4px;
+    margin-top: 8px;
+    text-align: center;
+    z-index: 1;
+    min-width: 140px;
+    font-weight: 490;
+}
+  
+/* Estilo das opções do dropdown */
+.dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.dropdown-menu li {
+    padding: 8px;
+    cursor: pointer;
+}
+  
+.dropdown-menu li:hover {
+    background-color:#4376a7;
+    color:white;
+}

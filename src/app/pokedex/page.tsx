@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, ChangeEvent } from "react";
-import Styles"./page.css";
-import pokelogo from "../public/assets/pokelogo.png"; // Certifique-se de mover a imagem para a pasta `public`
+import "@/app/page.css";
+import pokelogo from "@/app/assets/pokelogo.png"; 
 
 interface PokemonData {
   name: string;
@@ -17,7 +17,7 @@ interface PokemonData {
 }
 
 export default function Home() {
-  const [data, setData] = useState<PokemonData | null>(null);
+  const [Data, setData] = useState<PokemonData | null>(null);
   const [pokemonName, setPokemonName] = useState<string>("");
   const [pokemonShiny, setPokemonShiny] = useState<boolean>(false);
 
@@ -72,37 +72,37 @@ export default function Home() {
     return typeColors[verify] || "white";
   };
 
-  const imageshiny = data?.sprites?.front_shiny || pokelogo;
-  const actualImage = data?.sprites?.front_default || pokelogo;
-  const verify = data?.types?.[0]?.type?.name || data?.types?.[1]?.type?.name || '';
-  const habilidade = data?.abilities?.[0]?.ability?.name || '';
+  const imageshiny = Data?.sprites?.front_shiny || pokelogo;
+  const actualImage = Data?.sprites?.front_default || pokelogo;
+  const verify = Data?.types?.[0]?.type?.name || Data?.types?.[1]?.type?.name || '';
+  const habilidade = Data?.abilities?.[0]?.ability?.name || '';
 
   return (
     <div className="container">
       <div className="texto">Digite o nome do Pokémon desejado: </div>
-      <div class="card" style={{
+      <div className="card" style={{
         backgroundColor:(saberTipo(verify) ) }}>
         <div className="header-card">
           <div className="input-area">
             <input type="text" onChange={handleInputChange} />
-            <div className="tipo">Tipo: {verify ? data.types[0].type.name : '' || verify ? data.types[1].type.name : ''}</div>
+            <div className="tipo">Tipo: {verify ? Data?.types[0].type.name : "" || verify ? Data?.types[1].type.name : ''}</div>
           </div>
 
     
     
           <img
-           alt={pokemonshiny ? "Shiny" : "Normal"}
-           src={pokemonshiny ? Imageshiny : actualImage}
-           onClick={() => setPokemonshiny(!pokemonshiny)}
+           alt={pokemonShiny ? "Shiny" : "Normal"}
+           src={pokemonShiny ? imageshiny : actualImage}
+           onClick={() => setPokemonShiny(!pokemonShiny)}
         />
        </div>
 
        <div className="card-info">
-        {pokemonshiny && data.name ? <div className="aviso-shiny">shiny</div> : ''}
-          <p>Nome: {data.name}</p>
-          <p>altura: {data.height ? data.height/10  + ' m' : ''}  </p>
-          <p>peso: {data.weight ? data.weight/10  + ' kg' : ''} </p>
-          <p>habilidade: {habilidade ? data.abilities[0].ability.name : ''}</p>
+        {pokemonShiny && Data?.name ? <div className="aviso-shiny">shiny</div> : ''}
+          <p>Nome: {Data?.name}</p>
+          <p>altura: {Data?.height ? Data.height/10  + ' m' : ''}  </p>
+          <p>peso: {Data?.weight ? Data.weight/10  + ' kg' : ''} </p>
+          <p>habilidade: {habilidade ? Data?.abilities[0].ability.name : ''}</p>
           {/* Exibindo os tipos do Pokémon */}
         </div>
       </div>

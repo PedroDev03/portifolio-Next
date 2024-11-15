@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Footer{
+    background-color:#295b8a;
+    color: white;
+    display:flex;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 40px 30px 25px;
+ 
+}
