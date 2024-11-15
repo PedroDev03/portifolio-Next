@@ -19,17 +19,19 @@ interface PokemonData {
 export default function Home() {
   const [Data, setData] = useState<PokemonData | null>(null);
   const [pokemonName, setPokemonName] = useState<string>("");
-  const [pokemonShiny, setPokemonShiny] = useState<boolean>(false);
+  const [pokemonshiny, setPokemonshiny] = useState<boolean>(false);
 
+  console.log(responsestatus)
   const fetchData = async () => {
     try {
       const response = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
       );
+      setResponseStatus(response.status)
+
       if (response.ok) {
         const jsonData: PokemonData = await response.json();
         setData(jsonData);
-        console.log(response.status);
       } else {
         setData(null); // Reseta se não encontrar o Pokémon
         console.error("Pokémon não encontrado");
@@ -42,6 +44,8 @@ export default function Home() {
   useEffect(() => {
     if (pokemonName) fetchData();
   }, [pokemonName]);
+
+  console.log("nome aqui", pokemonName);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const name = event.target.value;
@@ -107,6 +111,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-    
   );
 }
