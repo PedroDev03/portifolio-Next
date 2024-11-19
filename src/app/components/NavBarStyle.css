@@ -44,7 +44,7 @@
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 73%; /* Alinha o menu com o botão */
+    left: 51.5%; /* Alinha o menu com o botão */
     background-color:white;
     box-shadow: 10px 14px 18px rgba(196, 196, 196, 0.1);
     color:black;

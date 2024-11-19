@@ -7,11 +7,12 @@ export default function NavBar() {
   const [OpenProj, setOpenProj] = useState<boolean>(false);
 
 
+  const cliqueCont = () => {
+    setOpen(!Open);
+  };
 
 
-
-    const clique = () => {
-      setOpen(!Open);
+    const cliqueProj = () => {
       setOpenProj(!OpenProj);
     };
   
@@ -21,7 +22,7 @@ export default function NavBar() {
         const target = event.target as HTMLElement;
         if (!target.closest(".dropdown") && !target.closest(".Botao-Projetos")) {
           setOpen(false);
-          setOpenProj(!OpenProj);
+          setOpenProj(false);
         }
       };
   
@@ -35,16 +36,16 @@ export default function NavBar() {
   return (
     <div className="Navbar">
       <div className="dropdown">
-        <button className="Botao-Projetos" onClick={clique}>
+        <button className="Botao-Projetos" onClick={cliqueProj}>
           <b>Projetos</b>
         </button>
-        <button className="Botao-Contato" onClick={clique}>
+        <button className="Botao-Contato" onClick={cliqueCont}>
           <b>Contato</b>
         </button>
-               {Open && (
+               {OpenProj && (
                <div className="dropdown-menu">
                     <ul>
-                    <li>Pokedex</li>
+                    <li><a>Pokedex</a></li>
                   </ul>
                 </div>
                       )}

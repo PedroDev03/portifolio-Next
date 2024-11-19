@@ -8,16 +8,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    
     <html lang="en" suppressHydrationWarning>
+
       <head>
-        <title>Ramais Unimed Anápolis</title>
+      <link rel="icon" href="/favicon.ico" />
+      <title>Portifólio Pedro :p</title>
         {/* Include other meta tags or links here */}
       </head>
 
       <body>
+         
           <NavBar />
 
           {children}
+      
           <Footer />
       </body>
     </html>

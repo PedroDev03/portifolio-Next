@@ -7,8 +7,9 @@
     color: white;
     display:flex;
     bottom: 0;
+    position: fixed; /* Fixado na janela */
     width: 100%;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 20px 40px 30px 25px;
  
 }

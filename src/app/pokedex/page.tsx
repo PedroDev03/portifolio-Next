@@ -21,32 +21,46 @@ export default function Home() {
   const [pokemonName, setPokemonName] = useState<string>("");
   const [pokemonShiny, setPokemonShiny] = useState<boolean>(false);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
-      );
 
-      if (response.ok) {
-        const jsonData: PokemonData = await response.json();
-        setData(jsonData);
-      } else {
-        setData(null); // Reseta se não encontrar o Pokémon
-        console.error("Pokémon não encontrado");
-      }
-    } catch (error) {
-      console.error("Erro ao buscar dados:", error);
-    }
-  };
-
-  useEffect(() => {
-    if (pokemonName) fetchData();
-  }, [pokemonName]);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const name = event.target.value;
     setPokemonName(name.toLowerCase());
   };
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
+        );
+  
+        if (response.ok) {
+          const jsonData: PokemonData = await response.json();
+          setData(jsonData);
+        } else {
+          setData(null); // Reseta se não encontrar o Pokémon
+          console.error("Pokémon não encontrado");
+        }
+      } catch (error) {
+        console.error("Erro ao buscar dados:", error);
+      }
+    };
+  
+    // Só faz o fetch se houver um nome de Pokémon
+    if (pokemonName) {
+      fetchData();
+      const debounceTimeout = setTimeout(fetchData, 1000); // 300ms de debounce
+      return () => clearTimeout(debounceTimeout);
+    }
+
+    // const debounceTimeout = setTimeout(fetchData, 1000); // 300ms de debounce
+    // return () => clearTimeout(debounceTimeout);
+  }, [pokemonName]);
+  
+
+ 
 
   const typeColors: { [key: string]: string } = {
     fire: "orangered",
@@ -89,7 +103,7 @@ export default function Home() {
       >
         <div className="header-card">
           <div className="input-area">
-            <input type="text" onChange={handleInputChange} />
+            <input type="text" placeholder="    digite aqui" onChange={handleInputChange} />
             <div className="tipo">
               Tipo:{" "}
               {verify
