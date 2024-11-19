@@ -4,12 +4,15 @@ import React, { useEffect, useState } from "react";
 
 export default function NavBar() {
   const [Open, setOpen] = useState<boolean>(false);
+  const [OpenProj, setOpenProj] = useState<boolean>(false);
+
 
 
 
 
     const clique = () => {
       setOpen(!Open);
+      setOpenProj(!OpenProj);
     };
   
     useEffect(() => {
@@ -18,6 +21,7 @@ export default function NavBar() {
         const target = event.target as HTMLElement;
         if (!target.closest(".dropdown") && !target.closest(".Botao-Projetos")) {
           setOpen(false);
+          setOpenProj(!OpenProj);
         }
       };
   

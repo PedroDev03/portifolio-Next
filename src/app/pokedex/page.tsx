@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, ChangeEvent } from "react";
-import "@/app/page.css";
-import pokelogo from "@/app/assets/pokelogo.png"; 
+import "@/app/pokedex/page.css";
+import pokelogo from "@/app/assets/pokelogo.png";
 
 interface PokemonData {
   name: string;
@@ -19,15 +19,13 @@ interface PokemonData {
 export default function Home() {
   const [Data, setData] = useState<PokemonData | null>(null);
   const [pokemonName, setPokemonName] = useState<string>("");
-  const [pokemonshiny, setPokemonshiny] = useState<boolean>(false);
+  const [pokemonShiny, setPokemonShiny] = useState<boolean>(false);
 
-  console.log(responsestatus)
   const fetchData = async () => {
     try {
       const response = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
       );
-      setResponseStatus(response.status)
 
       if (response.ok) {
         const jsonData: PokemonData = await response.json();
@@ -44,8 +42,6 @@ export default function Home() {
   useEffect(() => {
     if (pokemonName) fetchData();
   }, [pokemonName]);
-
-  console.log("nome aqui", pokemonName);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const name = event.target.value;
@@ -78,36 +74,49 @@ export default function Home() {
 
   const imageshiny = Data?.sprites?.front_shiny || pokelogo;
   const actualImage = Data?.sprites?.front_default || pokelogo;
-  const verify = Data?.types?.[0]?.type?.name || Data?.types?.[1]?.type?.name || '';
-  const habilidade = Data?.abilities?.[0]?.ability?.name || '';
+  const verify = Data?.types?.[0]?.type?.name || Data?.types?.[1]?.type?.name || "";
+  const habilidade = Data?.abilities?.[0]?.ability?.name || "";
 
+  // Retorno do componente
   return (
     <div className="container">
       <div className="texto">Digite o nome do Pokémon desejado: </div>
-      <div className="card" style={{
-        backgroundColor:(saberTipo(verify) ) }}>
+      <div
+        className="card"
+        style={{
+          backgroundColor: saberTipo(verify),
+        }}
+      >
         <div className="header-card">
           <div className="input-area">
             <input type="text" onChange={handleInputChange} />
-            <div className="tipo">Tipo: {verify ? Data?.types[0].type.name : "" || verify ? Data?.types[1].type.name : ''}</div>
+            <div className="tipo">
+              Tipo:{" "}
+              {verify
+                ? Data?.types[0]?.type.name || Data?.types[1]?.type.name
+                : ""}
+            </div>
           </div>
 
-    
-    
           <img
-           alt={pokemonShiny ? "Shiny" : "Normal"}
-           src={pokemonShiny ? imageshiny : actualImage}
-           onClick={() => setPokemonShiny(!pokemonShiny)}
-        />
-       </div>
+            alt={pokemonShiny ? "Shiny" : "Normal"}
+            src={pokemonShiny ? imageshiny : actualImage}
+            onClick={() => setPokemonShiny(!pokemonShiny)}
+          />
+        </div>
 
-       <div className="card-info">
-        {pokemonShiny && Data?.name ? <div className="aviso-shiny">shiny</div> : ''}
+        <div className="card-info">
+          {pokemonShiny && Data?.name ? (
+            <div className="aviso-shiny">shiny</div>
+          ) : (
+            ""
+          )}
           <p>Nome: {Data?.name}</p>
-          <p>altura: {Data?.height ? Data.height/10  + ' m' : ''}  </p>
-          <p>peso: {Data?.weight ? Data.weight/10  + ' kg' : ''} </p>
-          <p>habilidade: {habilidade ? Data?.abilities[0].ability.name : ''}</p>
-          {/* Exibindo os tipos do Pokémon */}
+          <p>altura: {Data?.height ? Data.height / 10 + " m" : ""} </p>
+          <p>peso: {Data?.weight ? Data.weight / 10 + " kg" : ""} </p>
+          <p>
+            habilidade: {habilidade ? Data?.abilities[0].ability.name : ""}
+          </p>
         </div>
       </div>
     </div>
