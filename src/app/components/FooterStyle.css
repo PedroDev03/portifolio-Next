@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .Footer{
-    background-color:#295b8a;
+    background-color:#5c161e;
     color: white;
     display:flex;
     bottom: 0;

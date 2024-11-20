@@ -1,12 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images:{
+    images: {
         remotePatterns: [
-            {protocol: 'https',
-                hostname: 'https://pokeapi.co'
-            }
-        ]
-    }
-};
-
-export default nextConfig;
+          {
+            protocol: "https",
+            hostname: "raw.githubusercontent.com",
+            pathname: "/PokeAPI/sprites/**",
+          },
+          {
+            protocol: "https",
+            hostname: "pokeapi.co",
+            pathname: "/**",
+          },
+        ],
+      },
+    };
+    
+    export default nextConfig;

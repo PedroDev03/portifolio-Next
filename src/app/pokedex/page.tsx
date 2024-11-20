@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useState, useEffect, ChangeEvent } from "react";
 import "@/app/pokedex/page.css";
 import pokelogo from "@/app/assets/pokelogo.png";
@@ -20,7 +20,7 @@ export default function Home() {
   const [Data, setData] = useState<PokemonData | null>(null);
   const [pokemonName, setPokemonName] = useState<string>("");
   const [pokemonShiny, setPokemonShiny] = useState<boolean>(false);
-
+  const [botaoShiny, setBotaoShiny] = useState<boolean>(false);
 
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -102,21 +102,32 @@ export default function Home() {
         }}
       >
         <div className="header-card">
-          <div className="input-area">
-            <input type="text" placeholder="    digite aqui" onChange={handleInputChange} />
+          <div className="input">
+            <input className="input-area" type="text"
+             placeholder="    digite aqui" 
+             onChange={handleInputChange}
+             style={{ 
+              padding: "2px", 
+              paddingLeft: "8px",
+             }} 
+             />
             <div className="tipo">
               Tipo:{" "}
               {verify
                 ? Data?.types[0]?.type.name || Data?.types[1]?.type.name
                 : ""}
             </div>
-          </div>
-
-          <img
+            
+            </div>
+              <button className="btn-shiny">Shiny</button>
+          <Image className="card-image"
             alt={pokemonShiny ? "Shiny" : "Normal"}
             src={pokemonShiny ? imageshiny : actualImage}
+            width={250}
+            height={250}
             onClick={() => setPokemonShiny(!pokemonShiny)}
           />
+          
         </div>
 
         <div className="card-info">
@@ -125,6 +136,7 @@ export default function Home() {
           ) : (
             ""
           )}
+         
           <p>Nome: {Data?.name}</p>
           <p>altura: {Data?.height ? Data.height / 10 + " m" : ""} </p>
           <p>peso: {Data?.weight ? Data.weight / 10 + " kg" : ""} </p>
@@ -132,6 +144,8 @@ export default function Home() {
             habilidade: {habilidade ? Data?.abilities[0].ability.name : ""}
           </p>
         </div>
+
+
       </div>
     </div>
   );
