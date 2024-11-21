@@ -90,10 +90,13 @@ export default function Home() {
   const actualImage = Data?.sprites?.front_default || pokelogo;
   const verify = Data?.types?.[0]?.type?.name || Data?.types?.[1]?.type?.name || "";
   const habilidade = Data?.abilities?.[0]?.ability?.name || "";
+   
+
 
   // Retorno do componente
   return (
     <div className="container">
+
       <div className="texto">Digite o nome do Pokémon desejado: </div>
       <div
         className="card"
@@ -101,6 +104,9 @@ export default function Home() {
           backgroundColor: saberTipo(verify),
         }}
       >
+
+       {/*  cabeçalho do card*/}
+
         <div className="header-card">
           <div className="input">
             <input className="input-area" type="text"
@@ -111,15 +117,34 @@ export default function Home() {
               paddingLeft: "8px",
              }} 
              />
+
+
+           {/*  tipo pokemon */}
+
             <div className="tipo">
               Tipo:{" "}
               {verify
-                ? Data?.types[0]?.type.name || Data?.types[1]?.type.name
+                ? Data?.types[0]?.type.name ||
+                 Data?.types[1]?.type.name
                 : ""}
             </div>
             
+
             </div>
-              <button className="btn-shiny">Shiny</button>
+
+        {/*   botao shiny */}
+
+            {actualImage == pokelogo ? ("") : (
+              <button className="btn-shiny"
+               onClick={() => setPokemonShiny(!pokemonShiny)}>
+                Shiny
+               </button>
+            )}
+
+
+          {/*   imagem card */}
+
+
           <Image className="card-image"
             alt={pokemonShiny ? "Shiny" : "Normal"}
             src={pokemonShiny ? imageshiny : actualImage}
@@ -130,13 +155,13 @@ export default function Home() {
           
         </div>
 
+
+       {/*   informações do card */}
+
         <div className="card-info">
           {pokemonShiny && Data?.name ? (
             <div className="aviso-shiny">shiny</div>
-          ) : (
-            ""
-          )}
-         
+          ) : ("")}
           <p>Nome: {Data?.name}</p>
           <p>altura: {Data?.height ? Data.height / 10 + " m" : ""} </p>
           <p>peso: {Data?.weight ? Data.weight / 10 + " kg" : ""} </p>

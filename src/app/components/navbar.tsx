@@ -1,7 +1,7 @@
 "use client";
 import "@/app/components/NavBarStyle.css";
 import React, { useEffect, useState } from "react";
-
+import Link from 'next/link'
 export default function NavBar() {
   const [Open, setOpen] = useState<boolean>(false);
   const [OpenProj, setOpenProj] = useState<boolean>(false);
@@ -44,12 +44,16 @@ export default function NavBar() {
         </button>
                {OpenProj && (
                <div className="dropdown-menu">
-                    <ul>
-                    <li><a>Pokedex</a></li>
-                  </ul>
+                  <ul>
+                    <li>
+                    <Link href="/pokedex">Pokedex</Link>
+                    </li> 
+                  </ul>                 
                 </div>
                       )}
+       
       </div>
+      
     </div>
   );
 }
