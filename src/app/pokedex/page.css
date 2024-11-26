@@ -1,9 +1,8 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.container{
+.container {
   display: flex;
   height: 100vh;
 }
@@ -12,45 +11,50 @@
 
 /* area do input */
 
-.input-area{    
+.input-area {
   border-radius: 2%;
   border: 2px solid black;
 }
 
 /* area total do input */
 
-.input{
+.input {
   display: flex;
   margin-left: 65px;
-  margin-top: 10px ;
-  font-family:sans-serif;
+  margin-top: 10px;
+  font-family: sans-serif;
 
 }
-.texto{
+
+.texto {
   margin-left: 100px;
-  margin-top:80px;
+  margin-top: 80px;
   font-size: large;
   font-family: sans-serif;
   font-weight: bold;
 }
+
 .card {
-  
+
   width: 400px;
   height: 515px;
   margin-top: 75px;
   margin-left: 4%;
-  margin-bottom:20px;;
+  margin-bottom: 20px;
+  ;
   box-shadow: 0px 0px 16px #585858,
-  125px -15px 30px #ffffff;
+    125px -15px 30px #ffffff;
   border-radius: 3%;
   /* color: darkgoldenrod; */
 }
-.tipo{
-    margin-left: 30px;
-    font-weight: bold;
+
+.tipo {
+  margin-left: 30px;
+  font-weight: bold;
 
 }
-.card-info{
+
+.card-info {
   display: flex;
   flex-direction: column;
   margin-left: 15%;
@@ -59,9 +63,10 @@
   color: black;
   font-family: sans-serif;
   font-size: medium;
-  font-weight:bolder;
-   /* color:gold;  */
+  font-weight: bolder;
+  /* color:gold;  */
 }
+
 /* .card-image{
     height: 200px;
     margin-left:
@@ -69,18 +74,19 @@
 /* .card-image:hover img{
 
 } */
-.card-image{
-  display:flex;
+.card-image {
+  display: flex;
   /* position: center; */
   margin: 10%;
   height: 210px;
   width: 210px;
-  cursor: pointer; 
+  cursor: pointer;
   object-fit: contain;
-  margin-left: 23%;
+  margin-left: 19%;
   /* transition: 1.3s; */
 }
-.btn-shiny{
+
+.btn-shiny {
   /* position:absolute; */
   left: 35px;
   width: 70px;
@@ -89,14 +95,15 @@
   font-weight: 400;
   border-color: black;
   background-color: #f0f0f0f0;
-  cursor: pointer;;
+  cursor: pointer;
+  ;
   border-radius: 4px;
 }
-.aviso-shiny{
-  bottom:250px;
-  position:fixed;
+
+.aviso-shiny {
+  bottom: 250px;
+  position: fixed;
   color: black;
   font-family: sans-serif;
   margin-left: 115px;
-  }
-  
+}

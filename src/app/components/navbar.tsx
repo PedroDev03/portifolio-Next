@@ -40,7 +40,7 @@ export default function NavBar() {
           <b>Projetos</b>
         </button>
         <button className="Botao-Contato" onClick={cliqueCont}>
-          <b>Contato</b>
+        <Link href="/Contato"><b>Contato</b></Link>
         </button>
                {OpenProj && (
                <div className="dropdown-menu">
