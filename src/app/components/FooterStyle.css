@@ -5,11 +5,10 @@
 .Footer{
     background-color:#5c161e;
     color: white;
-    display:flex;
+    /* display:; */
     bottom: 0;
-    position: fixed; /* Fixado na janela */
+    position:relative; /* Fixado na janela */
     width: 100%;
     /* justify-content: space-between; */
     padding: 20px 40px 30px 25px;
- 
 }

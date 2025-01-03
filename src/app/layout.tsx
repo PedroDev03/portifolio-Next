@@ -13,7 +13,7 @@ export default function RootLayout({
 
       <head>
       <link rel="icon" href="/favicon.ico" />
-      <title>Portifólio Pedro :p</title>
+      <title>Portifólio</title>
         {/* Include other meta tags or links here */}
       </head>
 
