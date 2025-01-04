@@ -2,13 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-.Footer{
-    background-color:#5c161e;
-    color: white;
-    /* display:; */
-    bottom: 0;
-    position:relative; /* Fixado na janela */
-    width: 100%;
-    /* justify-content: space-between; */
-    padding: 20px 40px 30px 25px;
+/* Estilo do Footer */
+.Footer {
+    background-color: #5c161e; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    width: 100%; /* Largura total */
+    padding: 20px 40px 30px 25px; /* Espaçamento interno */
+    position: relative; /* Posição relativa */
+}
+
+/* Layout para garantir o Footer no final */
+body, html {
+    min-height: 100%; /* Garante que o corpo ocupe toda a altura da janela */
+}
+
+#root { /* Se estiver usando React com Next.js */
+    display: flex;
+    flex-direction: column; /* Layout em coluna */
+    min-height: 100vh; /* Garante altura total da viewport */
+}
+
+main {
+    flex-grow: 1; /* Faz o conteúdo crescer para empurrar o footer */
 }

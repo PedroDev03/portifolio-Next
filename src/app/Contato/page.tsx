@@ -1,5 +1,5 @@
 import { Tabs } from "@chakra-ui/react"
-import { LuCheckSquare, LuFolder, LuUser } from "react-icons/lu"
+import {  LuFolder, LuUser } from "react-icons/lu"
 import "@/app/Contato/page.css"
 import Link from "next/link"
 

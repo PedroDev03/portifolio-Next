@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilo do Footer */
+.Footer {
+  background-color: #5c161e; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  width: 100%; /* Largura total */
+  padding: 20px 40px 30px 25px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o conteúdo do footer */
+}
+
+/* Certifique-se de usar as classes do layout */
+html, body {
+  height: 100%; /* Garante que o HTML e o body ocupem 100% da altura */
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Coloca o conteúdo em coluna */
+  min-height: 100vh; /* Altura mínima da viewport */
+}
+
+main {
+  flex-grow: 1; /* Faz o conteúdo crescer e empurrar o footer para baixo */
+}
