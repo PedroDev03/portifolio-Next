@@ -21,7 +21,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className="dark"> {/* Ou use uma lógica condicional aqui para alternar entre 'dark' e 'light' */}
+    <html lang="en"> {/* Ou use uma lógica condicional aqui para alternar entre 'dark' e 'light' */}
       <head>
         <link rel="icon" href="/favicon.ico" />
         <title>Portfólio</title>

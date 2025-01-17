@@ -4,8 +4,7 @@ import "@/app/Contato/page.css"
 import Link from "next/link"
 
 export default function Contato(){
-    
-    const CardContato = () => {
+
       return (
         <Tabs.Root defaultValue="members">
           <Tabs.List className="contatos">
@@ -49,18 +48,7 @@ export default function Contato(){
             obrigado por acessar!!
           </Tabs.Content>
         </Tabs.Root>
-      )
+      );
+
     }
     
-
-return(
-    <>
-        <h1>informações para contato</h1>
-        <div className="container">
-            <CardContato/>
-        </div>
-    </>
-
-);
-
-}

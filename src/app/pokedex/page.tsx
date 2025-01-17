@@ -28,7 +28,6 @@ export default function Home() {
     setPokemonName(name.toLowerCase());
   };
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -48,16 +47,13 @@ export default function Home() {
       }
     };
   
-    // Só faz o fetch se houver um nome de Pokémon
+    // Faz o fetch somente se houver um nome de Pokémon
     if (pokemonName) {
-      fetchData();
-      const debounceTimeout = setTimeout(fetchData, 1000); // 300ms de debounce
+      const debounceTimeout = setTimeout(fetchData, 500); // 500ms de debounce
       return () => clearTimeout(debounceTimeout);
     }
-
-    // const debounceTimeout = setTimeout(fetchData, 1000); // 300ms de debounce
-    // return () => clearTimeout(debounceTimeout);
   }, [pokemonName]);
+  
   
 
  

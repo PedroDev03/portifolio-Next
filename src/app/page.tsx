@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
 
-      <React.Fragment>
+
         <CssBaseline />
         <Container fixed>
           <Box className="Box"
@@ -43,7 +43,6 @@ export default function Home() {
             </button> */}
           </Box>
         </Container>
-      </React.Fragment>
 
       <Card /> 
      
