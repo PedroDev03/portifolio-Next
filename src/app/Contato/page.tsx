@@ -6,7 +6,7 @@ import Link from "next/link"
 export default function Contato(){
 
       return (
-        <Tabs.Root defaultValue="members">
+        <Tabs.Root defaultValue="members" className="container">
           <Tabs.List className="contatos">
             <Tabs.Trigger value="linkedin" className="linkedin">
               <LuUser />
@@ -26,8 +26,8 @@ export default function Contato(){
              <br></br>
         
              <button className="btn-LinkedIn">
-            <Link href="https://www.linkedin.com/in/pedro-soares-37b32721b/"
-            >
+            <Link href="https://www.linkedin.com/in/pedro-soares-dev/"
+            > 
              LinkedIn
             </Link>
             </button>

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import NavBar from "@/app/components/navbar";
-import Footer from "@/app/components/footer";
+import Footer from "./components/footer";
 import { Provider } from "@/components/ui/provider"; // Certifique-se de que o Provider esteja configurado
 
 export default function RootLayout({
@@ -22,18 +22,26 @@ export default function RootLayout({
 
   return (
     <html lang="en"> {/* Ou use uma lógica condicional aqui para alternar entre 'dark' e 'light' */}
+     
       <head>
         <link rel="icon" href="/favicon.ico" />
         <title>Portfólio</title>
+
       </head>
       <body className="flex flex-col min-h-screen">
 
-          <NavBar />
+  
           <Provider>
-          <main className="flex-grow">{children}</main>
+          <NavBar />
+
+          <main className="flex-grow">{children} </main>
+          
+          <Footer />
         </Provider>
-        <Footer />
+       
       </body>
+
+
     </html>
   );
 }

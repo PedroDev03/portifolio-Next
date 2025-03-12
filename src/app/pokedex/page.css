@@ -93,17 +93,18 @@
   top: 80%;
   text-transform: uppercase;
   font-weight: 400;
+  color: black;
   border-color: black;
   background-color: #f0f0f0f0;
   cursor: pointer;
   ;
   border-radius: 4px;
+  font-weight: 700;
 }
 
 .aviso-shiny {
   bottom: 250px;
   position: fixed;
-  color: black;
   font-family: sans-serif;
   margin-left: 115px;
 }

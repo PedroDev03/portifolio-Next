@@ -29,6 +29,12 @@ export default function Home() {
   };
 
   useEffect(() => {
+    
+  if (!pokemonName) {
+    setData(null); // Reseta os dados quando o input estiver vazio
+    return; // Sai da função antes de chamar a API
+  }
+
     const fetchData = async () => {
       try {
         const response = await fetch(
@@ -118,7 +124,7 @@ export default function Home() {
            {/*  tipo pokemon */}
 
             <div className="tipo">
-              Tipo:{" "}
+              Tipo:{null}
               {verify
                 ? Data?.types[0]?.type.name ||
                  Data?.types[1]?.type.name
@@ -156,7 +162,7 @@ export default function Home() {
 
         <div className="card-info">
           {pokemonShiny && Data?.name ? (
-            <div className="aviso-shiny">shiny</div>
+          <div className="aviso-shiny">shiny</div>
           ) : ("")}
           <p>Nome: {Data?.name}</p>
           <p>altura: {Data?.height ? Data.height / 10 + " m" : ""} </p>

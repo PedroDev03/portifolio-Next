@@ -4,7 +4,9 @@
 
 .contatos{
     gap: 30px;
-}
+    
+} 
+
 
 .h1{
   margin: 0px;
@@ -53,10 +55,12 @@
 } */
 
 
-.container{
-    margin: 50px;
-    margin-left: 250px;
-    align-items:start;
-    
+.container {
+    display: relative;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante altura total da tela */
+
 }
+
 

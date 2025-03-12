@@ -30,11 +30,19 @@ export default function Home() {
               <h2 class="MuiTypography-root MuiTypography-h2 OLA">Olá,</h2>
        
               <h2 className="h2-1">Me chamo
-              <span class="MuiBox-root NOME">Pedro Soares,</span>
+              <span class="MuiBox-root NOME"><b>Pedro Soares,</b></span>
               </h2>
               <br></br>
-              <h2>Tenho 20 anos e atualmente estou cursando o 6º período pela Universidade Estadual de Goiás
+              <h2 className="Desc">Tenho 20 anos e atualmente estou cursando o 6º período pela Universidade Estadual de Goiás, <span class="MuiBox-root Dev">Desenvolvedor Front-End </span> com foco em criar soluções eficientes e elegantes para applicações web; 
+              <br></br>
+                 Resido na cidade de Anápolis - Goiás
+              
+
               </h2>
+         
+            
+              
+
               </div>
 
 
@@ -44,8 +52,8 @@ export default function Home() {
           </Box>
         </Container>
 
-      <Card /> 
-     
+      {/* <Card /> 
+      */}
     </>
   );
 }
