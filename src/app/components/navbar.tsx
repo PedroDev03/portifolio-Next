@@ -20,7 +20,7 @@ export default function NavBar() {
       const handleClickOutside = (event: MouseEvent) => {
         // Verifica se o clique foi fora do menu e do botão
         const target = event.target as HTMLElement;
-        if (!target.closest(".dropdown") && !target.closest(".Botao-Projetos")) {
+        if (!target.closest(".Botao-Projetos") && !target.closest(".dropdown-menu")) {
           setOpen(false);
           setOpenProj(false);
         }
@@ -46,7 +46,7 @@ export default function NavBar() {
                <div className="dropdown-menu">
                   <ul>
                     <li>
-                    <Link href="/pokedex">Pokedex</Link>
+                    <Link href="/pokedex"><b>Pokedex</b></Link>
                     </li> 
                   </ul>                 
                 </div>

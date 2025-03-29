@@ -1,66 +1,46 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.contatos{
-    gap: 30px;
-    
-} 
-
-
-.h1{
-  margin: 0px;
-  font-family: Poppins, sans-serif;
-  font-weight: 300;
-  font-size: 3.80rem;
-  line-height: 1.2;
-  color: rgb(79, 93, 117);
-  text-shadow: rgba(0, 0, 0, 0.4) 2px 2px 4px;
-}
-
-
-.btn-LinkedIn{
-    border-radius: 5px;
-    background-color:rgb(27, 85, 85);
-    margin: 50px;
-    padding: 10px;
-    color: white;
-}
-
-.btn-LinkedIn:hover{
-    background-color:rgb(41, 155, 155);
-}
-
-.btn-email{
-    border-radius: 5px;
-    background-color:rgb(27, 85, 85);
-    margin: 50px;
-    color: white;
-    padding: 10px;
-}
-
-.btn-email:hover{
-    background-color:rgb(41, 155, 155);
-}
-
-/* .btn-LinkedIn{
-    border-radius: 5px;
-    background-color:rgb(27, 85, 85);
-    margin: 50px;
-    padding: 10px;
-}
-
-.btn-LinkedIn:hover{
-    background-color:rgb(41, 155, 155);
-} */
-
-
 .container {
-    display: relative;
-    justify-content: center;
+    display:inline-flex;
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh; /* Garante altura total da tela */
+    justify-content: center;
+    min-height: 60vh;
 
+    gap: 20px;
+    text-align: center;
 }
 
+.contatos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.linkedin, .e-mail, .user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #1b5555;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.linkedin:hover, .e-mail:hover, .user:hover {
+    background-color: #299b9b;
+}
+
+.TabsContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #299b9b;
+}
 

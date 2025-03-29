@@ -162,7 +162,7 @@ export default function Home() {
 
         <div className="card-info">
           {pokemonShiny && Data?.name ? (
-          <div className="aviso-shiny">shiny</div>
+          <h1 className="aviso-shiny">shiny</h1>
           ) : ("")}
           <p>Nome: {Data?.name}</p>
           <p>altura: {Data?.height ? Data.height / 10 + " m" : ""} </p>

@@ -4,7 +4,8 @@
 
 .container {
   display: flex;
-  height: 100vh;
+  height: 50vh;
+  margin-left: 80px;
 }
 
 
@@ -49,7 +50,7 @@
 }
 
 .tipo {
-  margin-left: 30px;
+  margin-left: 20px;
   font-weight: bold;
 
 }
@@ -58,7 +59,7 @@
   display: flex;
   flex-direction: column;
   margin-left: 15%;
-  margin-top: 20%;
+  margin-top: 25px;
   align-self: flex-start;
   color: black;
   font-family: sans-serif;
@@ -88,23 +89,23 @@
 
 .btn-shiny {
   /* position:absolute; */
-  left: 35px;
+  left: 45px;
   width: 70px;
-  top: 80%;
+  top: 80px;
   text-transform: uppercase;
   font-weight: 400;
   color: black;
   border-color: black;
   background-color: #f0f0f0f0;
   cursor: pointer;
-  ;
+
   border-radius: 4px;
   font-weight: 700;
 }
 
 .aviso-shiny {
-  bottom: 250px;
-  position: fixed;
+  margin-top: -30px;
+  /* position: fixed; */
   font-family: sans-serif;
   margin-left: 115px;
 }
