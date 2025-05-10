@@ -2,6 +2,10 @@
 import "@/app/components/NavBarStyle.css";
 import React, { useEffect, useState } from "react";
 import Link from 'next/link'
+import Image from "next/image";
+import Logo from "@/app/assets/icon2.png";
+
+
 export default function NavBar() {
   const [Open, setOpen] = useState<boolean>(false);
   const [OpenProj, setOpenProj] = useState<boolean>(false);
@@ -35,6 +39,9 @@ export default function NavBar() {
 
   return (
     <div className="Navbar">
+      <a className="home-icon" href="/">
+         <Image src={Logo} alt="Botão de imagem" width="52" />
+       </a>
       <div className="dropdown">
         <button className="Botao-Projetos" onClick={cliqueProj}>
           <b>Projetos</b>

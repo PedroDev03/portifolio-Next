@@ -11,7 +11,12 @@
     
 }
 
+.home-icon{
+    margin-left: 20px;
+    margin-top: 0px;    
+    margin-bottom: -15px;
 
+}
 /* Estilo do contêiner do dropdown */
 .dropdown {
     position: relative;

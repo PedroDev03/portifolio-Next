@@ -7,7 +7,7 @@ export default function Footer() {
         <>
 
             <div className="Footer">
-                <p>© 2025 - Meu Projeto</p>
+                <p>© 2025 - Portifólio</p>
                 
             </div>
         </>
