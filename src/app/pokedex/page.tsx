@@ -20,7 +20,6 @@ export default function Home() {
   const [Data, setData] = useState<PokemonData | null>(null);
   const [pokemonName, setPokemonName] = useState<string>("");
   const [pokemonShiny, setPokemonShiny] = useState<boolean>(false);
-  const [botaoShiny, setBotaoShiny] = useState<boolean>(false);
 
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
