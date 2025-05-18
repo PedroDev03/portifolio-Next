@@ -7,13 +7,9 @@ import Logo from "@/app/assets/icon2.png";
 
 
 export default function NavBar() {
-  const [Open, setOpen] = useState<boolean>(false);
+
   const [OpenProj, setOpenProj] = useState<boolean>(false);
 
-
-  const cliqueCont = () => {
-    setOpen(!Open);
-  };
 
 
     const cliqueProj = () => {
@@ -25,7 +21,7 @@ export default function NavBar() {
         // Verifica se o clique foi fora do menu e do botão
         const target = event.target as HTMLElement;
         if (!target.closest(".Botao-Projetos") && !target.closest(".dropdown-menu")) {
-          setOpen(false);
+       
           setOpenProj(false);
         }
       };
