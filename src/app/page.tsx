@@ -32,8 +32,9 @@ export default function Home() {
               <span className="MuiBox-root NOME"><b>Pedro Soares,</b></span>
               </h2>
               <br></br>
-              <h2 className="Desc">Tenho 21 anos e atualmente estou cursando o 6º período pela Universidade Estadual de Goiás, <span className="MuiBox-root Dev">Desenvolvedor Front-End </span> com foco em criar soluções eficientes e elegantes para applicações web; 
-              <br></br>
+              <h2 className="Desc">Tenho 21 anos e atualmente estou cursando o 6º período pela Universidade Estadual de Goiás, <span className="MuiBox-root Dev">Desenvolvedor Front-End 
+                </span> com foco em criar soluções eficientes e elegantes para aplicações web através das tecnologias mais atuais do mercado como: <br></br> ReactJS, NextJS, TypeScript, JavaScript, HTML e CSS.; 
+              <br></br><br></br>
                  Resido na cidade de Anápolis - Goiás
               
 

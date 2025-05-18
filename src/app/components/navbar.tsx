@@ -46,17 +46,22 @@ export default function NavBar() {
         <button className="Botao-Projetos" onClick={cliqueProj}>
           <b>Projetos</b>
         </button>
-        <button className="Botao-Contato" onClick={cliqueCont}>
-        <Link href="/Contato"><b>Contato</b></Link>
-        </button>
+        <Link href="/Contato">
+              <button className="Botao-Contato">
+               <b>Contato</b>
+            </button>
+            </Link>
+
                {OpenProj && (
+                <Link href="/pokedex">
                <div className="dropdown-menu">
                   <ul>
                     <li>
-                    <Link href="/pokedex"><b>Pokedex</b></Link>
+                    <b>Pokedex</b>
                     </li> 
                   </ul>                 
                 </div>
+                </Link>
                       )}
        
       </div>
