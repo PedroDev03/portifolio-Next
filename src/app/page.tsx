@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Cardinfo from "./components/CardInfopharma";
 import CardUnimed from "./components/CardUnimed";
+import CardPokemon from "./components/CardPokemon"
 
 export default function Home() {
   return (
@@ -54,7 +55,7 @@ export default function Home() {
             display: "flex",
             flexWrap: "wrap",
             gap: "1.5rem",
-            marginTop: "1rem",
+            marginTop: "5rem",
             justifyContent: "start",
           }}
         >
@@ -63,6 +64,24 @@ export default function Home() {
           </Box>
           <Box sx={{ minWidth: 280, flexGrow: 1 }}>
             <CardUnimed />
+          </Box>
+        </Box>
+
+
+     <h2 className="MuiTypography-root MuiTypography-h2 XP" style={{ marginTop: "3rem" }}>
+          Projetos
+        </h2>
+              <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "1.5rem",
+            marginTop: "5rem",
+            justifyContent: "start",
+          }}
+        >
+               <Box sx={{ minWidth: 280, flexGrow: 1 }}>
+            <CardPokemon />
           </Box>
         </Box>
         

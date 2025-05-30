@@ -1,4 +1,4 @@
-import "./CardInfopharma.css";
+import "./CardUnimed.css";
 import { Card, Text } from "@chakra-ui/react"
 import logo from "../assets/logo_fundo_transparente.png"
 import Image from "next/image"
@@ -10,7 +10,7 @@ export default function CardUnimed() {
   return (
     <Card.Root maxW="sm" overflow="hidden">
       <Image  className="logo"
-      style={{ padding : "5px" , width:"300px", marginBottom:"50px", marginTop:"70px"}}
+      style={{ padding : "16px" , width:"300px", marginBottom:"50px", marginTop:"70px"}}
    
       src={logo}
         alt="logo"

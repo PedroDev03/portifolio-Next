@@ -102,8 +102,10 @@ export default function Home() {
       <div
         className="card"
         style={{
-          backgroundColor: saberTipo(verify),
-        }}
+    backgroundColor: saberTipo(verify),
+    boxShadow: `0px 0px 16px ${saberTipo(verify)}, 20px -3px 8px ${saberTipo(verify)}`,
+    transition: 'box-shadow 0.3s ease-in-out' // Adicione uma transição para ver a mudança
+  }}
       >
 
        {/*  cabeçalho do card*/}
@@ -147,6 +149,7 @@ export default function Home() {
 
 
           <Image className="card-image"
+
             alt={pokemonShiny ? "Shiny" : "Normal"}
             src={pokemonShiny ? imageshiny : actualImage}
             width={250}

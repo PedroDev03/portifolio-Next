@@ -82,35 +82,36 @@
 .dropdown-menu li:hover {
     background-color: #8f323c;
     color: white;
+        border-radius: 4px;
 }
 
 
 /* Media query para telas com largura máxima de 500px */
-@media (max-width: 885px) {
+@media (max-width: 900px) {
     .Navbar {
         padding: 15px 30px; /* Reduz o padding geral da navbar */
     }
 
     .home-icon {
-        margin-left: -25px; /* Reduz a margem esquerda do ícone home em telas menores */
+        margin-left: 0px; /* Reduz a margem esquerda do ícone home em telas menores */
         width: 40px; /* Ajusta o tamanho do ícone se necessário em telas menores */
     }
 
     .Botao-Projetos {
         padding: 8px 15px; /* Reduz o padding dos botões em telas menores */
         font-size: 14px; /* Reduz o tamanho da fonte dos botões em telas menores */
-        margin-left: 12px; /* Mantém o botão à direita */
+        margin-left: 30px; /* Mantém o botão à direita */
     }
 
     .Botao-Contato {
         padding: 8px 15px; /* Reduz o padding dos botões em telas menores */
         font-size: 14px; /* Reduz o tamanho da fonte dos botões em telas menores */
-        margin-left: 13px; /* Reduz a margem esquerda do botão de contato em telas menores */
+        margin-left: 35px; /* Reduz a margem esquerda do botão de contato em telas menores */
     }
 
     .dropdown-menu {
-        left: 0; /* Garante que o dropdown se alinha corretamente em telas menores */
-        min-width: 120px; /* Reduz a largura mínima do dropdown em telas menores */
+        left: 15; /* Garante que o dropdown se alinha corretamente em telas menores */
+        min-width: 110px; /* Reduz a largura mínima do dropdown em telas menores */
         font-size: 14px; /* Reduz o tamanho da fonte do dropdown em telas menores */
     }
 }
