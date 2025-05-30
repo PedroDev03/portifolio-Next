@@ -2,65 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.Navbar{
-
+.Navbar {
     background-color: #5c161e;
     display: flex;
     padding: 20px 40px 30px 25px;
-    
 }
 
-.home-icon{
+.home-icon {
     margin-left: 20px;
-    margin-top: 0px;    
+    margin-top: 0px;
     margin-bottom: -15px;
-
 }
+
 /* Estilo do contêiner do dropdown */
 .dropdown {
     position: relative;
     display: inline-block;
+}
 
-  }
-  
 /* Estilo do botão */
 .Botao-Projetos {
-    padding: 10px 40px 10px 40px;
+    padding: 10px 40px;
     cursor: pointer;
-    background-color:azure;
-    color:#8f323c;
+    background-color: azure;
+    color: #8f323c;
     border-radius: 4px;
     font-size: 16px;
     margin-left: 380px;
+}
 
-}
 .Botao-Projetos:hover {
-    background-color:#8f323c;
-    color:white;
+    background-color: #8f323c;
+    color: white;
 }
+
 .Botao-Contato {
-    padding: 10px 40px 10px 40px;
+    padding: 10px 40px;
     cursor: pointer;
-    background-color:azure;
-    color:#8f323c;
+    background-color: azure;
+    color: #8f323c;
     border-radius: 4px;
     font-size: 16px;
     margin-left: 80px;
+}
 
-}
 .Botao-Contato:hover {
-    background-color:#8f323c;
-    color:white;
+    background-color: #8f323c;
+    color: white;
 }
+
 /* Menu dropdown */
 .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 51.5%; /* Alinha o menu com o botão */
-    background-color:white;
+    background-color: white;
     box-shadow: 10px 14px 18px rgba(196, 196, 196, 0.1);
-    color:black;
+    color: black;
     border-radius: 4px;
     margin-top: 8px;
     text-align: center;
@@ -68,20 +66,51 @@
     min-width: 140px;
     font-weight: 490;
 }
-  
+
 /* Estilo das opções do dropdown */
 .dropdown-menu ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
-  
+
 .dropdown-menu li {
     padding: 8px;
     cursor: pointer;
 }
-  
+
 .dropdown-menu li:hover {
-    background-color:#8f323c;
-    color:white;
+    background-color: #8f323c;
+    color: white;
+}
+
+
+/* Media query para telas com largura máxima de 500px */
+@media (max-width: 885px) {
+    .Navbar {
+        padding: 15px 30px; /* Reduz o padding geral da navbar */
+    }
+
+    .home-icon {
+        margin-left: -25px; /* Reduz a margem esquerda do ícone home em telas menores */
+        width: 40px; /* Ajusta o tamanho do ícone se necessário em telas menores */
+    }
+
+    .Botao-Projetos {
+        padding: 8px 15px; /* Reduz o padding dos botões em telas menores */
+        font-size: 14px; /* Reduz o tamanho da fonte dos botões em telas menores */
+        margin-left: 12px; /* Mantém o botão à direita */
+    }
+
+    .Botao-Contato {
+        padding: 8px 15px; /* Reduz o padding dos botões em telas menores */
+        font-size: 14px; /* Reduz o tamanho da fonte dos botões em telas menores */
+        margin-left: 13px; /* Reduz a margem esquerda do botão de contato em telas menores */
+    }
+
+    .dropdown-menu {
+        left: 0; /* Garante que o dropdown se alinha corretamente em telas menores */
+        min-width: 120px; /* Reduz a largura mínima do dropdown em telas menores */
+        font-size: 14px; /* Reduz o tamanho da fonte do dropdown em telas menores */
+    }
 }

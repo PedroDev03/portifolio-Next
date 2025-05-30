@@ -9,6 +9,7 @@
     width: 100%; /* Largura total */
     padding: 20px 40px 30px 25px; /* Espaçamento interno */
     position: relative; /* Posição relativa */
+    margin-top:15px;
 }
 
 /* Layout para garantir o Footer no final */

@@ -24,6 +24,7 @@ export default function RootLayout({
     <html lang="en"> {/* Ou use uma lógica condicional aqui para alternar entre 'dark' e 'light' */}
      
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
         <title>Portfólio</title>
 

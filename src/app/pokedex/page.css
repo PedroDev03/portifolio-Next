@@ -3,111 +3,182 @@
 @tailwind utilities;
 
 .container {
-  display: flex;
-  height: 50vh;
-  margin-left: 80px;
+    display: flex;
+    height: auto; /* Alterado para auto para se ajustar ao conteúdo em telas menores */
+    margin-left: 20px; /* Reduzida a margem esquerda padrão */
+    flex-direction: column; /* Alterado para column para melhor layout em telas menores */
+    align-items: center; /* Centralizar os itens na tela */
 }
 
-
-
 /* area do input */
-
 .input-area {
-  border-radius: 2%;
-  border: 2px solid black;
+    border-radius: 2%;
+    border: 2px solid black;
 }
 
 /* area total do input */
-
 .input {
-  display: flex;
-  margin-left: 65px;
-  margin-top: 10px;
-  font-family: sans-serif;
-
+    display: flex;
+    margin-left: 0px; /* Reduzida a margem esquerda */
+    margin-top: 10px;
+    font-family: sans-serif;
+    justify-content: center; /* Centralizar o input */
+    width: 90%; /* Ocupar mais largura em telas menores */
 }
 
 .texto {
-  margin-left: 100px;
-  margin-top: 80px;
-  font-size: large;
-  font-family: sans-serif;
-  font-weight: bold;
+    margin-left: 20px; /* Reduzida a margem esquerda */
+    margin-top: 40px; /* Reduzida a margem superior */
+    font-size: medium; /* Reduzido o tamanho da fonte padrão */
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center; /* Centralizar o texto */
 }
 
 .card {
-
-  width: 400px;
-  height: 515px;
-  margin-top: 75px;
-  margin-left: 4%;
-  margin-bottom: 20px;
-  ;
-  box-shadow: 0px 0px 16px #585858,
-    125px -15px 30px #ffffff;
-  border-radius: 3%;
-  /* color: darkgoldenrod; */
+    width: 90%; /* Tornar o card responsivo em largura */
+    max-width: 400px; /* Manter uma largura máxima */
+    height: auto; /* Alterado para auto para se ajustar ao conteúdo */
+    margin-top: 30px; /* Reduzida a margem superior */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 16px #585858,
+        25px -5px 10px #ffffff; /* Ajustada a sombra para telas menores */
+    border-radius: 3%;
 }
 
 .tipo {
-  margin-left: 20px;
-  font-weight: bold;
-
+    margin-left: 20px;
+    font-weight: bold;
 }
 
 .card-info {
-  display: flex;
-  flex-direction: column;
-  margin-left: 15%;
-  margin-top: 25px;
-  align-self: flex-start;
-  color: black;
-  font-family: sans-serif;
-  font-size: medium;
-  font-weight: bolder;
-  /* color:gold;  */
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-top: 20px; /* Reduzida a margem superior */
+    align-self: flex-start;
+    color: black;
+    font-family: sans-serif;
+    font-size: small; /* Reduzido o tamanho da fonte */
+    font-weight: bolder;
 }
 
-/* .card-image{
-    height: 200px;
-    margin-left:
-} */
-/* .card-image:hover img{
-
-} */
 .card-image {
-  display: flex;
-  /* position: center; */
-  margin: 10%;
-  height: 210px;
-  width: 210px;
-  cursor: pointer;
-  object-fit: contain;
-  margin-left: 19%;
-  /* transition: 1.3s; */
+    display: flex;
+    margin: 5%; /* Reduzida a margem */
+    height: 150px; /* Reduzida a altura da imagem */
+    width: 150px; /* Reduzida a largura da imagem */
+    cursor: pointer;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-shiny {
-  /* position:absolute; */
-
-  left: 45px;
-  width: 70px;
-  margin-top: 15px;
-  margin-left: 10px;
-  text-transform: uppercase;
-  font-weight: 400;
-  color: black;
-  border-color: black;
-  background-color: #f0f0f0f0;
-  cursor: pointer;
-
-  border-radius: 4px;
-  font-weight: 700;
+    left: 20px; /* Reduzido o espaçamento da esquerda */
+    width: 60px; /* Reduzida a largura do botão */
+    margin-top: 10px; /* Reduzida a margem superior */
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: black;
+    border-color: black;
+    background-color: #f0f0f0f0;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: small; /* Reduzido o tamanho da fonte do botão */
 }
 
 .aviso-shiny {
-  margin-top: -24px;
-  /* position: fixed; */
-  font-family: sans-serif;
-  margin-left: 115px;
+    margin-top: -20px; /* Ajustada a margem superior */
+    font-family: sans-serif;
+    margin-left: 80px; /* Reduzida a margem esquerda */
+    font-size: small; /* Reduzido o tamanho da fonte do aviso */
+}
+
+/*media*/
+@media (max-width: 810px) {
+    .container {
+        margin-left: 0; /* Removendo a margem esquerda em telas menores */
+    }
+
+    .input {
+        margin-left: 0; /* Removendo a margem esquerda em telas menores */
+    }
+
+    .texto {
+        margin-left: 0; /* Removendo a margem esquerda em telas menores */
+        margin-top: 30px; /* Ajustando a margem superior em telas menores */
+        font-size: medium; /* Mantendo ou ajustando o tamanho da fonte em telas menores */
+    }
+
+    .card {
+        margin-top: 20px; /* Ajustando a margem superior em telas menores */
+        box-shadow: 0px 0px 10px #585858,
+            15px -3px 8px #ffffff; /* Ajustando a sombra para telas menores */
+    }
+
+    .card-info {
+        margin-left: 10%; /* Ajustando a margem esquerda em telas menores */
+        font-size: small; /* Mantendo ou ajustando o tamanho da fonte em telas menores */
+    }
+
+    .card-image {
+        height: 180px; /* Aumentando um pouco a altura da imagem em telas menores */
+        width: 180px; /* Aumentando um pouco a largura da imagem em telas menores */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-shiny {
+        left: 10px; /* Ajustando a posição do botão shiny em telas menores */
+        width: 60px; /* Mantendo ou ajustando a largura do botão */
+        font-size: smaller; /* Ajustando o tamanho da fonte do botão em telas menores */
+    }
+
+    .aviso-shiny {
+        margin-left: 75px; /* Ajustando a margem esquerda do aviso shiny em telas menores */
+        font-size: smaller; /* Ajustando o tamanho da fonte do aviso shiny em telas menores */
+    }
+}
+
+@media (max-width: 500px) {
+    .texto {
+        font-size: medium; /* Ajustando o tamanho da fonte para telas menores */
+    }
+
+    .card {
+        height: auto; /* Permitir que o card se ajuste ao conteúdo em telas menores */
+    }
+
+    .card-info {
+        font-size: smaller; /* Ajustando o tamanho da fonte para telas menores */
+    }
+
+    .card-image {
+        height: 150px; /* Ajustando a altura da imagem para telas menores */
+        width: 150px; /* Ajustando a largura da imagem para telas menores */
+    }
+}
+
+@media (max-width: 375px) {
+    .texto {
+        font-size: small; /* Ajustando o tamanho da fonte para telas ainda menores */
+    }
+
+    .card-info {
+        font-size: x-small; /* Ajustando o tamanho da fonte para telas ainda menores */
+    }
+
+    .btn-shiny {
+        font-size: x-small; /* Ajustando o tamanho da fonte do botão para telas ainda menores */
+    }
+
+    .aviso-shiny {
+        font-size: x-small; /* Ajustando o tamanho da fonte do aviso para telas ainda menores */
+        margin-left: 70px;
+    }
 }

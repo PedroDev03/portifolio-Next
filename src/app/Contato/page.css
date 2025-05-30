@@ -1,77 +1,91 @@
-/* Centraliza o container na página inteira */
+/* Centralize o container na página inteira (movido para um layout pai ou _app.js) */
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  
-    padding: 20px;
-    text-align: center;
-  }
-  
-  /* Estiliza e centraliza os triggers das abas */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estiliza e centraliza os triggers das abas */
+.contatos {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Diminuindo o gap */
+  margin-bottom: 10px; /* Diminuindo a margem inferior */
+}
+
+/* Estilo uniforme para os botões de trigger */
+.linkedin,
+.e-mail,
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 15px; /* Reduzindo um pouco o padding horizontal */
+  background-color: #1b5555;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.9rem; /* Ajustando o tamanho da fonte */
+}
+
+.linkedin:hover,
+.e-mail:hover,
+.user:hover {
+  background-color: #299b9b;
+}
+
+/* Conteúdo das tabs centralizado */
+.TabsContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 10px; /* Diminuindo a margem superior */
+  text-align: center;
+  font-size: 1rem; /* Ajustando o tamanho da fonte */
+}
+
+@media (max-width: 500px) {
   .contatos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
+    width: 100%;
+    gap: 5px; /* Diminuindo ainda mais o gap em telas menores */
+    font-size:2px;
   }
-  
-  /* Estilo uniforme para os botões de trigger */
   .linkedin,
   .e-mail,
   .user {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 5px 20px;
-    background-color: #1b5555;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+    font-size: 0.8rem;
+    padding: 5px 10px;
   }
-  
-  .linkedin:hover,
-  .e-mail:hover,
-  .user:hover {
-    background-color: #299b9b;
-  }
-  
-  /* Conteúdo das tabs centralizado */
   .TabsContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  
-    padding: 10px;
-    margin-top: 15px;
-    text-align: center;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    text-align: center; /* Mantenha centralizado, "bottom" pode não ser o ideal */
   }
-  
-  /* Botão estilizado */
-  .btn-LinkedIn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    background-color: #299b9b;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    margin-top: 10px;
-    transition: 0.3s;
-    min-width: 120px;
-  }
-  
-  .btn-LinkedIn:hover {
-    background-color: #1b5555;
-  }
-  
+}
+
+/* Botão estilizado */
+.btn-LinkedIn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #299b9b;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: 0.3s;
+  min-width: 100px; /* Ajustando a largura mínima */
+  font-size: 0.85rem; /* Ajustando o tamanho da fonte */
+}
+
+.btn-LinkedIn:hover {
+  background-color: #1b5555;
+}
