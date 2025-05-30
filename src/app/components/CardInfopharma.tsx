@@ -1,5 +1,5 @@
 import "./CardInfopharma.css";
-import { Button, Card, Text } from "@chakra-ui/react"
+import { Card, Text } from "@chakra-ui/react"
 import logo from "../assets/logoinfopharma.png"
 import Image from "next/image"
 
