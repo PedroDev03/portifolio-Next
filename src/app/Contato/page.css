@@ -1,7 +1,8 @@
 /* Centralize o container na página inteira (movido para um layout pai ou _app.js) */
 .container {
-  display: flex;
+  position: center; 
   flex-direction: column;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;

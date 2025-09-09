@@ -5,7 +5,8 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Cardinfo from "./components/CardInfopharma";
 import CardUnimed from "./components/CardUnimed";
-import CardPokemon from "./components/CardPokemon"
+import CardPokemon from "./components/CardPokemon";
+import CardMaps from "./components/CardMaps";
 
 export default function Home() {
   return (
@@ -80,10 +81,16 @@ export default function Home() {
             justifyContent: "start",
           }}
         >
-               <Box sx={{ minWidth: 280, flexGrow: 1 }}>
-            <CardPokemon />
-          </Box>
+          <Box sx={{ flex: '1 1 280px', minWidth: 280 }}>
+    <CardPokemon />
+  </Box>
+  <Box sx={{ flex: '1 1 280px', minWidth: 280 }}>
+    <CardMaps />
+  </Box>
+
         </Box>
+        
+
         
       </Container>
     </>

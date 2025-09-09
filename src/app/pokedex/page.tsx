@@ -16,6 +16,8 @@ interface PokemonData {
   };
 }
 
+
+
 export default function Home() {
   const [Data, setData] = useState<PokemonData | null>(null);
   const [pokemonName, setPokemonName] = useState<string>("");
