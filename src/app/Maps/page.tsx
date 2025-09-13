@@ -118,19 +118,31 @@ const pharmaciesCortadas = cortarAtePalavra(pharmacies, "Região");
         </ul> */}
 
 
- 
+<Box
+  position="fixed"
+  top="0"
+  left="0"
+  width="100%"
+  height="100%"
+  zIndex={-1} // fica atrás de tudo
+>
+  <img
+    src="/background-login2.png"
+    alt="Fundo"
+    style={{
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover'
+    }}
+  />
+</Box>
 
-
-            <Box display="flex" justifyContent="Center" alignContent="Center"
-            bgImage="url('/assets/background-login2.png')"
-            bgSize="cover"
-            bgPosition="center"
-            bgRepeat="no-repeat"
-             minH="100vh"
-             display="flex"
-            justifyContent="center"
-            alignItems="center"
-      >
+<Box
+  display="flex"
+  justifyContent="center"
+  alignItems="center"
+  minHeight="80vh"
+>
             <Card.Root
              maxW="sm" overflow="hidden" marginTop={0} shadowColor={"black"}
               boxShadow="xs" backgroundColor={"white"} color={"black"}              

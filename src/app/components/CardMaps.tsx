@@ -1,9 +1,13 @@
+"use client";
 import { Badge, Box, Button, Card, HStack } from "@chakra-ui/react"
 import Image from "next/image"
 import logo from "../assets/logo_maps.jpg"
 import Link from 'next/link'
+import Modo from "@/app/Funcoes/ModoNavegador";
+
 
 export default function CardMaps() {
+  const isDarkMode = Modo();
     return (
   <Card.Root flexDirection="row" overflow="hidden" maxW="xl">
        
@@ -29,7 +33,8 @@ export default function CardMaps() {
       </Card.Body>
       <Card.Footer>
         <Link href="/Maps">
-        <Button backgroundColor={"white"} color={"black"} padding={5} ><b>Ir para projeto</b></Button>
+        <Button  color={isDarkMode ? "black" : "White"}
+      bg={isDarkMode ? "White" : "Black"} padding={5} ><b>Ir para projeto</b></Button>
         </Link>
       </Card.Footer>
     </Box>

@@ -25,9 +25,20 @@ export default function CardUnimed() {
 
 <Card.Root maxW="sm" overflow="hidden">
       <Image
-        style={{ padding: '16px', width: '300px', marginTop: '70px', marginBottom: '50px' }}
-        src={isDarkMode ? logo : logo_claro}
-        alt="logo"
+      alt="logo"
+      
+      src={isDarkMode ? logo : logo_claro}
+      width={300}
+      height={150}
+      style={{
+        padding: isDarkMode ? '16px' : '10px',
+        marginTop: isDarkMode ? '70px' : '-40px',
+        marginBottom: isDarkMode ? '-30px' : '70px'
+      }}
+      
+
+     
+      
       />
       <Card.Body gap="2">
         <Card.Title style={{ fontSize: "30px" }}>Unimed Anápolis</Card.Title>

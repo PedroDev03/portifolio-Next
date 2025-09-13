@@ -1,9 +1,14 @@
+"use client";
 import { Badge, Box, Button, Card, HStack } from "@chakra-ui/react"
 import Image from "next/image"
 import logo from "../assets/pokelogo.png"
 import Link from 'next/link'
+import Modo from "@/app/Funcoes/ModoNavegador";
+
 
 export default function Cardpokemon() {
+
+  const isDarkMode = Modo();
     return (
   <Card.Root flexDirection="row" overflow="hidden" maxW="xl">
        
@@ -29,7 +34,8 @@ export default function Cardpokemon() {
       </Card.Body>
       <Card.Footer>
         <Link href="/pokedex">
-        <Button backgroundColor={"white"} color={"black"} padding={5} ><b>Ir para projeto</b></Button>
+        <Button  color={isDarkMode ? "black" : "White"}
+      bg={isDarkMode ? "White" : "Black"} padding={5} ><b>Ir para projeto</b></Button>
         </Link>
       </Card.Footer>
     </Box>

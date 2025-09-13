@@ -42,6 +42,7 @@ export default function NavBar() {
         <button className="Botao-Projetos" onClick={cliqueProj}>
           <b>Projetos</b>
         </button>
+        
         <Link href="/Contato">
               <button className="Botao-Contato">
                <b>Contato</b>
@@ -49,15 +50,22 @@ export default function NavBar() {
             </Link>
 
                {OpenProj && (
-                <Link href="/pokedex">
+                
                <div className="dropdown-menu">
                   <ul>
+                  <Link href="/pokedex">
                     <li>
                     <b>Pokedex</b>
                     </li> 
+                    </Link>
+                    <Link href="/Maps">
+                    <li>
+                    <b>Sorteador</b>
+                    </li> 
+                    </Link>
                   </ul>                 
                 </div>
-                </Link>
+            
                       )}
        
       </div>

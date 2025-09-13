@@ -8,7 +8,14 @@ import CardUnimed from "./components/CardUnimed";
 import CardPokemon from "./components/CardPokemon";
 import CardMaps from "./components/CardMaps";
 
+
+
+
+
 export default function Home() {
+  
+
+
   return (
     <>
       <CssBaseline />

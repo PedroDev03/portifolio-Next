@@ -1,14 +1,25 @@
 /* Centralize o container na página inteira (movido para um layout pai ou _app.js) */
+/* Container principal */
 .container {
-  position: center; 
-  flex-direction: column;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;      /* centraliza horizontalmente */
+  justify-content: center;  /* centraliza verticalmente */
+  padding: 20px;
+  text-align: center;
+  gap: 20px;                /* espaço entre elementos */
+}
+
+/* Wrapper que centraliza sem ocupar 100vh */
+.center-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* horizontal */
+  justify-content: center;   /* vertical */
+  min-height: calc(70vh - 70px); /* 70px = altura do header */
   padding: 20px;
   text-align: center;
 }
-
 /* Estiliza e centraliza os triggers das abas */
 .contatos {
   display: flex;
