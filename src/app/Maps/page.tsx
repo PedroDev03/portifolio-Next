@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 // Apenas importe os componentes que você realmente vai usar
-import { Box, Button, Card, CardBody, CardFooter, Center, Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Card } from "@chakra-ui/react";
 
 
 
@@ -32,7 +32,7 @@ export default function CardCidade() {
     const [Data, setData] = useState<Cidades[]>([]);
     const [randomCity, setRandomCity] = useState<Cidades | null>(null);
     const [isLoading, setIsLoading] = useState(true);
-    const [pharmacies, setPharmacies] = useState<Lugar[]>([]);
+
 
     useEffect(() => {
 
