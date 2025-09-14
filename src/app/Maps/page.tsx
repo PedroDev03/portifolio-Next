@@ -24,12 +24,6 @@ interface Cidades {
 
 }
 
-interface Lugar {
-    place_id: number;
-    name: string;
-    display_name: string;
-
-}
 
 
 
@@ -38,9 +32,7 @@ export default function CardCidade() {
     const [Data, setData] = useState<Cidades[]>([]);
     const [randomCity, setRandomCity] = useState<Cidades | null>(null);
     const [isLoading, setIsLoading] = useState(true);
-    const [isLoadingPharmacies, setIsLoadingPharmacies] = useState(false);
     const [pharmacies, setPharmacies] = useState<Lugar[]>([]);
-    const [searchAttempted, setSearchAttempted] = useState(false);
 
     useEffect(() => {
 
@@ -75,8 +67,7 @@ export default function CardCidade() {
         if (Data.length > 0) {
             const randomIndex = Math.floor(Math.random() * Data.length);
             setRandomCity(Data[randomIndex]);
-            setPharmacies([]);
-             setSearchAttempted(false);
+    
         }
     };
 
@@ -85,18 +76,7 @@ const LinkDrogMap = <a target="blank" href={`https://www.google.com/maps/search/
 
 
 
-   function cortarAtePalavra(
-  arr: Lugar[],
-  palavra: string
-): Lugar[] {
-  // procura o índice do primeiro objeto que contém a palavra
-  const index = arr.findIndex((item) =>
-    item.display_name.toLowerCase().includes(palavra.toLowerCase())
-  );
-
-  // se achou, retorna do começo até esse índice (excluindo o encontrado)
-  return index !== -1 ? arr.slice(0, index) : arr;
-}
+ 
 
     if (isLoading) {
         return <p>Carregando lista de cidades...</p>;
@@ -104,7 +84,7 @@ const LinkDrogMap = <a target="blank" href={`https://www.google.com/maps/search/
 
 
 
-const pharmaciesCortadas = cortarAtePalavra(pharmacies, "Região");
+
     return (
         <>
 
@@ -162,41 +142,30 @@ const pharmaciesCortadas = cortarAtePalavra(pharmacies, "Região");
                         </div>
                     )}
                         
-                        {searchAttempted && !isLoadingPharmacies && pharmacies.length === 0 && (
-                             <Text mt={4} color="orange.600">
-                                Nenhuma farmácia encontrada para esta cidade.
-                             </Text>
-                        )}
-
+            
 
                         
-                        {pharmacies && (
-                              
-                    pharmaciesCortadas.length > 0 && (
-                         <div style={{ marginTop: '20px'}}>
-                                <Heading size="sm">Farmácias encontradas:  </Heading> <br></br>
-                               <ul >
-                                    {pharmacies.map((lugar) => (
-                                     
-                                        <li key={lugar.place_id} gap="2">
-                                           <b>Nome Drogaria:  </b>{lugar.name}<br></br>
-                                         
-                                           <b>Endereço: </b> {lugar.display_name} <br></br>
-                                           <br></br>
-                                        </li>
-                                     
-                                    ))}
-                                 </ul>
-                            </div>
-                    ))}
+            
 
                 </Card.Body>
                 <Card.Footer gap="1" style={{ display: 'flex', justifyContent: 'center' }} >
-                    <Button variant="solid" onClick={handleGetRandomCity} style={{fontSize:'15px', textAlign:'center', width:'210px'}} backgroundColor={"Black"} color={"white"}>Sortear uma cidade aleatória</Button>
-                    {/* <Button variant="ghost" colorScheme="teal" onClick={handleSearchPharmacies} >Ver drogarias</Button> */}
-                    {/* {(randomCity) &&
-                    <Button variant="ghost" colorScheme="teal" onClick={handleSearchPharmacies} style={{fontSize:'15px'}}>Ver drogarias</Button>
-                    }    */}
+                    <Button variant="solid" 
+                    onClick={handleGetRandomCity}
+                     style={{
+                        fontSize:'15px', 
+                        textAlign:'center', 
+                        width:'210px'
+                        }} 
+                        backgroundColor={"Black"}
+                         color={"white"}
+                            _hover={{
+                                 bg: "gray.300",
+                                  color: "black"
+                                }}
+                         >
+                            <b>Sortear uma cidade aleatória</b>
+                         </Button>
+              
                 </Card.Footer>
             </Card.Root>
 </Box>

@@ -33,8 +33,12 @@ export default function CardMaps() {
       </Card.Body>
       <Card.Footer>
         <Link href="/Maps">
-        <Button  color={isDarkMode ? "black" : "White"}
-      bg={isDarkMode ? "White" : "Black"} padding={5} ><b>Ir para projeto</b></Button>
+        <Button  
+        color={isDarkMode ? "black" : "White"}
+        bg={isDarkMode ? "White" : "Black"}
+        padding={5}
+        _hover={{ bg: isDarkMode ? "black" : "white" , color: isDarkMode ? "white" : "black"}}
+       ><b>Ir para projeto</b></Button>
         </Link>
       </Card.Footer>
     </Box>

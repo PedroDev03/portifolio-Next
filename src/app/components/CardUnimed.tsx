@@ -28,12 +28,12 @@ export default function CardUnimed() {
       alt="logo"
       
       src={isDarkMode ? logo : logo_claro}
-      width={300}
-      height={150}
+      // width={300}
+      // height={150}
       style={{
-        padding: isDarkMode ? '16px' : '10px',
-        marginTop: isDarkMode ? '70px' : '-40px',
-        marginBottom: isDarkMode ? '-30px' : '70px'
+        padding: isDarkMode ? '16px' : '5px',
+        marginTop: isDarkMode ? '70px' : '-80px',
+        marginBottom: isDarkMode ? '27px' : '-75px'
       }}
       
 
