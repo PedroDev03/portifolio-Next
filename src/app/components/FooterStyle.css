@@ -25,4 +25,5 @@ body, html {
 
 main {
     flex-grow: 1; /* Faz o conteúdo crescer para empurrar o footer */
+   
 }
