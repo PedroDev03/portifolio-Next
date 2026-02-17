@@ -38,4 +38,13 @@ export async function DELETE(
   return NextResponse.json({ message: `Produto ${id} deletado` }, { status: 200 });
 }
 
-/*
+*/
+"use client";
+import { NextResponse } form 'next/server';
+
+export async function GET(
+
+  request: Request, 
+  {params}: {params: { id: string}}
+
+)

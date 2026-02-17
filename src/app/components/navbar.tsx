@@ -58,6 +58,11 @@ export default function NavBar() {
                     <b>Pokedex</b>
                     </li> 
                     </Link>
+                    <Link href="/funcionario">
+                    <li>
+                    <b>Funcionarios</b>
+                    </li> 
+                    </Link>
                     <Link href="/Maps">
                     <li>
                     <b>Sorteador</b>
