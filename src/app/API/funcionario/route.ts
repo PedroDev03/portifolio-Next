@@ -1,4 +1,11 @@
 // EXEMPLOS ONDE NÃO PRECISO DO ID ESPECIFICADO
+import { NextResponse} from 'next/server';
+import prisma from '@/lib/prisma';
+
+export default async function GET(){
+  const funcionarios = await prisma.funcionario.finMany();
+  return 
+}
 /*
 import { NextResponse } from 'next/server';
 

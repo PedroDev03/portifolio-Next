@@ -3,6 +3,7 @@ import { defineConfig } from "prisma/config";
 import * as dotenv from "dotenv";
 
 // Força o carregamento do arquivo da Vercel
+dotenv.config({ path: ".env" });
 dotenv.config();
 
 // Log de depuração (opcional: remova após funcionar)
@@ -18,4 +19,4 @@ export default defineConfig({
   datasource: {
     url: process.env.POSTGRES_URL_NON_POOLING,
   },
-});
+}); // sempre rodar npx dotenv -e .env -- npx prisma db push  

@@ -10,3 +10,11 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+model funcionario{
+  id Int @id @default(autoincrement())
+  nome String
+  setor Int
+  funcao Int
+  createdAt DateTime @default(now())
+
+}

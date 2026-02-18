@@ -9,7 +9,7 @@ export default function useModo() {
     const media = window.matchMedia("(prefers-color-scheme: dark)");
     setIsDarkMode(media.matches);
 
-    // opcional: escuta mudanças de tema do SO
+    // escuta mudanças de tema do SO
     const handler = (e: MediaQueryListEvent) => setIsDarkMode(e.matches);
     media.addEventListener("change", handler);
     return () => media.removeEventListener("change", handler);
