@@ -14,7 +14,7 @@ export default function Form() {
     <div className="flex justify-center items-center ">
       
       {/* 2. Largura fixa em 350px e fundo vermelho #5c161e */}
-      <div className="w-[350px] bg-[#5c161e] p-6 rounded-lg shadow-xl">
+      <div className="w-[350px] bg-[#5c161e] mt-11 p-6 rounded-lg shadow-xl">
         <Fieldset.Root size="lg" invalid={false}>
           <Stack color="white" mb="4">
             <Fieldset.Legend color="white">Cadastro novo funcionário</Fieldset.Legend>
