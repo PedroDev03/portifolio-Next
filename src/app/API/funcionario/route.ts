@@ -13,14 +13,13 @@ export async function GET(){
 
 // POST: Criar um novo funcionário
 
-export async function criarFuncionario(formData: FormData) {
+export async function POST(formData: FormData) {
   const nome = formData.get('nome') as string
-  const email = formData.get('email') as string
-  const funcao = formData.get('funcao') as string
-
+  const setor = formData.get('setor') as unknown as number
+  const funcao = formData.get('funcao') as unknown as number
 
   await prisma.funcionario.create({
-    data: { nome, email, funcao }
+    data: { nome, setor, funcao }
   })
 
   revalidatePath('/funcionarios') // Atualiza a lista automaticamente
