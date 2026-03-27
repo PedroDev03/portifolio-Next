@@ -1,13 +1,14 @@
 import { PrismaClient } from '@prisma/client'
+import { Pool } from 'pg'
+import { PrismaPg } from '@prisma/adapter-pg'
+
+const connectionString = `${process.env.DATABASE_URL || process.env.POSTGRES_URL}`
+const pool = new Pool({ connectionString })
+const adapter = new PrismaPg(pool)
 
 const prismaClientSingleton = () => {
-  // No Prisma 7, se a URL estiver no config.ts, 
-  // você pode instanciar vazio, mas para a Vercel, passamos a URL de pooling aqui:
-  return new PrismaClient({
-    datasourceUrl: process.env.POSTGRES_PRISMA_URL,
-  } as any) // O 'as any' resolve o erro de tipagem temporário sem quebrar o código
+  return new PrismaClient({ adapter })
 }
-
 type PrismaClientSingleton = ReturnType<typeof prismaClientSingleton>
 
 const globalForPrisma = globalThis as unknown as {

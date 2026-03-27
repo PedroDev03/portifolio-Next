@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Button,
   Field,
@@ -7,14 +9,38 @@ import {
   NativeSelect,
   Stack,
 } from "@chakra-ui/react";
-import { POST } from "../API/funcionario/route";
+import { useRouter } from "next/navigation";
 
 export default function Form() {
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await fetch("/API/funcionario", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        router.push("/Funcionarios");
+        router.refresh();
+      } else {
+        console.error("Erro ao criar funcionário");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="flex justify-center items-center">
       <div className="w-[350px] bg-[#5c161e] mt-11 p-6 rounded-lg shadow-xl">
-        {/* Envolva o Fieldset.Root em um form com a action */}
-        <form action={POST}>
+        <form onSubmit={handleSubmit}>
           <Fieldset.Root size="lg">
             <Stack color="white" mb="4">
               <Fieldset.Legend color="white">Cadastro novo funcionário</Fieldset.Legend>
@@ -26,7 +52,6 @@ export default function Form() {
             <Fieldset.Content>
               <Field.Root>
                 <Field.Label color="white">Nome</Field.Label>
-                {/* O name deve ser igual ao do formData.get('nome') */}
                 <Input name="nome" bg="white" color="black" required />
               </Field.Root>
 
@@ -62,5 +87,5 @@ export default function Form() {
         </form>
       </div>
     </div>
-  )
+  );
 }

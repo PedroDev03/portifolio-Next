@@ -1,28 +1,31 @@
 // EXEMPLOS ONDE NÃO PRECISO DO ID ESPECIFICADO
 import { NextResponse} from 'next/server';
 import prisma from '@/lib/prisma';
-import ListaFuncionarios from '@/app/Funcionarios/page';
 import { revalidatePath } from 'next/cache';
-import { PrismaClientRustPanicError } from '@prisma/client/runtime/client';
 
 export async function GET(){
   const funcionarios = await prisma.funcionario.findMany();
   return NextResponse.json(funcionarios);
 }
 
-
 // POST: Criar um novo funcionário
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
+    
+    const novoFuncionario = await prisma.funcionario.create({
+      data: {
+        nome: body.nome,
+        funcao: body.funcao,
+        setor: body.setor,
+      },
+    });
 
-export async function POST(formData: FormData) {
-  const nome = formData.get('nome') as string
-  const setor = formData.get('setor') as unknown as number
-  const funcao = formData.get('funcao') as unknown as number
-
-  await prisma.funcionario.create({
-    data: { nome, setor, funcao }
-  })
-
-  revalidatePath('/funcionarios') // Atualiza a lista automaticamente
+    return NextResponse.json(novoFuncionario, { status: 201 });
+  } catch (error) {
+    console.error("Erro interno no POST:", error);
+    return NextResponse.json({ error: String(error) }, { status: 500 });
+  }
 }
 
 //UPDATE

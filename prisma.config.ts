@@ -16,7 +16,8 @@ export default defineConfig({
   migrations: {
     path: "prisma/migrations",
   },
-  datasource: {
-    url: process.env.POSTGRES_URL_NON_POOLING,
+datasource: {
+    // Para o CLI (Migration/Push), usamos a URL Non-Pooling
+    url: process.env.POSTGRES_URL_NON_POOLING || process.env.DATABASE_URL,
   },
 }); // sempre rodar npx dotenv -e .env -- npx prisma db push  

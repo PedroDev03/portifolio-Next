@@ -39,3 +39,6 @@ next-env.d.ts
 .env*.local
 .env
 /generated/prisma
+.app.rar
+src/app/app.rar
+portifolio.rar
